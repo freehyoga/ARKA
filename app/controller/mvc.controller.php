@@ -187,8 +187,15 @@ function getLibranzasAsociar( )
           return $libranza->libranzasAsociar();
 }
 
-function InsertarCliente($tipoIdent,$ident,$nombre,$apellidos,$telefono,$direccion,$fechaNacimiento,$celular,$email,
-                         $nacionalidad, $genero, $ciudadResidencia, $estadoCivil   )
+function InsertarCliente($tipoIdent,$ident,$nombre,$apellidos,$fechaNacimiento,$telefono,$fechaExpeMan,$paisExped,$deptoExped,
+        $ciudadExped,$genero,$paisNaci,$deptoNaci,$ciudadNaci,$nacionalidad,$sinoNaciona,$observNaciona,$sinoReside,
+        $observReside,$estadoCivil,$nivelEduca,$observNivelEdu,$tipoVivien,$observTipoVivind,$ciudadReside,
+        $direccionClie,$telefonoFijo,$celular,$email,$nombrsConyg,$apelldsConyg,$numIdentfcnConyg,$tipoIdentfcnConyg,
+        $fijoConyg,$ocupcn,$observOcupcn,$tipoEmprs,$NitEmpre,$Sector,$Empresa,$TelEmpresa,$DirEmpresa,$CargoEmpresa,
+        $SueldoActual,$tipoContr,$fechVincEmpr,$RecursPublc,$ObsRecuPubl,$VincRecursPublc,$DeclaraRenta,$SocioEmpre,
+        $PorceSoci,$RegiTribu,$Monedaextra,$TipoOpeExtra,$OtraOperExtra,$IngreFijo,$IngreVari,$otroIngre1,
+        $otroIngre2,$Hipoteca,$EgreCredi,$gastoFami,$otroEngre,$TotalEgr,$Vivienda,$Vehiculos,$Inver,$otroAct,
+        $TotalAct,$PasHipo,$PasTc,$otrObli,$otroPas,$TotalPas)
 {
     $cliente = new cliente();  
     

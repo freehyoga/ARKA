@@ -20,6 +20,152 @@ class cliente extends database {
     private $ciudadResidencia;
     private $telFijo;
     private $email;
+
+    private $fechaExpeMan;
+    private $paisExped ;
+    private $deptoExped;
+    private $ciudadExped ;
+    private $paisNaci;
+    private $deptoNaci;
+    private $ciudadNaci;
+    private $sinoNaciona;
+    private $observNaciona;
+    private $sinoReside;
+    private $observReside;
+    private $observNivelEdu ;
+    private $tipoVivien;
+    private $observTipoVivind; 	
+    private $direccionClie  ;	
+    private $celularClie;	
+    
+    
+    function getFechaExpeMan() {
+        return $this->fechaExpeMan;
+    }
+
+    function getPaisExped() {
+        return $this->paisExped;
+    }
+
+    function getDeptoExped() {
+        return $this->deptoExped;
+    }
+
+    function getCiudadExped() {
+        return $this->ciudadExped;
+    }
+
+    function getPaisNaci() {
+        return $this->paisNaci;
+    }
+
+    function getDeptoNaci() {
+        return $this->deptoNaci;
+    }
+
+    function getCiudadNaci() {
+        return $this->ciudadNaci;
+    }
+
+    function getSinoNaciona() {
+        return $this->sinoNaciona;
+    }
+
+    function getObservNaciona() {
+        return $this->observNaciona;
+    }
+
+    function getSinoReside() {
+        return $this->sinoReside;
+    }
+
+    function getObservReside() {
+        return $this->observReside;
+    }
+
+    function getObservNivelEdu() {
+        return $this->observNivelEdu;
+    }
+
+    function getTipoVivien() {
+        return $this->tipoVivien;
+    }
+
+    function getObservTipoVivind() {
+        return $this->observTipoVivind;
+    }
+
+    function getDireccionClie() {
+        return $this->direccionClie;
+    }
+
+    function getCelularClie() {
+        return $this->celularClie;
+    }
+
+    function setFechaExpeMan($fechaExpeMan) {
+        $this->fechaExpeMan = $fechaExpeMan;
+    }
+
+    function setPaisExped($paisExped) {
+        $this->paisExped = $paisExped;
+    }
+
+    function setDeptoExped($deptoExped) {
+        $this->deptoExped = $deptoExped;
+    }
+
+    function setCiudadExped($ciudadExped) {
+        $this->ciudadExped = $ciudadExped;
+    }
+
+    function setPaisNaci($paisNaci) {
+        $this->paisNaci = $paisNaci;
+    }
+
+    function setDeptoNaci($deptoNaci) {
+        $this->deptoNaci = $deptoNaci;
+    }
+
+    function setCiudadNaci($ciudadNaci) {
+        $this->ciudadNaci = $ciudadNaci;
+    }
+
+    function setSinoNaciona($sinoNaciona) {
+        $this->sinoNaciona = $sinoNaciona;
+    }
+
+    function setObservNaciona($observNaciona) {
+        $this->observNaciona = $observNaciona;
+    }
+
+    function setSinoReside($sinoReside) {
+        $this->sinoReside = $sinoReside;
+    }
+
+    function setObservReside($observReside) {
+        $this->observReside = $observReside;
+    }
+
+    function setObservNivelEdu($observNivelEdu) {
+        $this->observNivelEdu = $observNivelEdu;
+    }
+
+    function setTipoVivien($tipoVivien) {
+        $this->tipoVivien = $tipoVivien;
+    }
+
+    function setObservTipoVivind($observTipoVivind) {
+        $this->observTipoVivind = $observTipoVivind;
+    }
+
+    function setDireccionClie($direccionClie) {
+        $this->direccionClie = $direccionClie;
+    }
+
+    function setCelularClie($celularClie) {
+        $this->celularClie = $celularClie;
+    }    
     
     function getNivelEduca() {
         return $this->nivelEduca;
