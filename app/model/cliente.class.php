@@ -21,7 +21,15 @@ class cliente extends database {
     private $telFijo;
     private $email;
     
-    public function getCiudadResidencia() {
+    function getNivelEduca() {
+        return $this->nivelEduca;
+    }
+
+    function setNivelEduca($nivelEduca) {
+        $this->nivelEduca = $nivelEduca;
+    }
+
+        public function getCiudadResidencia() {
         return $this->ciudadResidencia;
     }
  
