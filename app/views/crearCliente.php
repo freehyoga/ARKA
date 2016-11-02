@@ -28,7 +28,6 @@
                 $nombre    = $_POST['nombresClie'];
                 $apellidos = $_POST['apellidosClie'];
                 $fechaNacimiento = $_POST['fechaNacClie'];
-                $telefono  = $_POST['celularClie'];
                 $fechaExpeMan  = $_POST['fechaExpeMan'];
                 
                 $paisExped  = $_POST['paisExped'];
@@ -112,8 +111,7 @@
                             $ident,
                             $nombre    ,               
                             $apellidos ,               
-                            $fechaNacimiento ,         
-                            $telefono  ,               
+                            $fechaNacimiento ,                      
                             $fechaExpeMan  ,           
 
                             $paisExped  ,              

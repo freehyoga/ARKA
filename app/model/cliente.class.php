@@ -10,35 +10,48 @@ class cliente extends database {
     private $identificacion;
     private $nombres;
     private $apellidos;
-    private $direccion;
-    private $fechaNacimiento;
-    private $celular;
-    private $genero;
-    private $nivelEduca;
-    private $nacionalidad;
-    private $estadoCivil;
-    private $ciudadResidencia;
-    private $telFijo;
-    private $email;
 
     private $fechaExpeMan;
     private $paisExped ;
     private $deptoExped;
     private $ciudadExped ;
+    private $fechaNacimiento;
+    private $genero;
     private $paisNaci;
     private $deptoNaci;
     private $ciudadNaci;
+    private $nacionalidad;
     private $sinoNaciona;
     private $observNaciona;
     private $sinoReside;
     private $observReside;
+    private $nivelEduca;
     private $observNivelEdu ;
     private $tipoVivien;
     private $observTipoVivind; 	
+    private $ciudadResidencia;
+    private $estadoCivil;
     private $direccionClie  ;	
-    private $celularClie;	
+    private $telFijo;
+    private $celularClie;
+    private $email;    
     
-    
+    function getTipoIdentificacion() {
+        return $this->tipoIdentificacion;
+    }
+
+    function getIdentificacion() {
+        return $this->identificacion;
+    }
+
+    function getNombres() {
+        return $this->nombres;
+    }
+
+    function getApellidos() {
+        return $this->apellidos;
+    }
+
     function getFechaExpeMan() {
         return $this->fechaExpeMan;
     }
@@ -55,6 +68,14 @@ class cliente extends database {
         return $this->ciudadExped;
     }
 
+    function getFechaNacimiento() {
+        return $this->fechaNacimiento;
+    }
+
+    function getGenero() {
+        return $this->genero;
+    }
+
     function getPaisNaci() {
         return $this->paisNaci;
     }
@@ -65,6 +86,10 @@ class cliente extends database {
 
     function getCiudadNaci() {
         return $this->ciudadNaci;
+    }
+
+    function getNacionalidad() {
+        return $this->nacionalidad;
     }
 
     function getSinoNaciona() {
@@ -83,6 +108,10 @@ class cliente extends database {
         return $this->observReside;
     }
 
+    function getNivelEduca() {
+        return $this->nivelEduca;
+    }
+
     function getObservNivelEdu() {
         return $this->observNivelEdu;
     }
@@ -95,12 +124,44 @@ class cliente extends database {
         return $this->observTipoVivind;
     }
 
+    function getCiudadResidencia() {
+        return $this->ciudadResidencia;
+    }
+
+    function getEstadoCivil() {
+        return $this->estadoCivil;
+    }
+
     function getDireccionClie() {
         return $this->direccionClie;
     }
 
+    function getTelFijo() {
+        return $this->telFijo;
+    }
+
     function getCelularClie() {
         return $this->celularClie;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function setTipoIdentificacion($tipoIdentificacion) {
+        $this->tipoIdentificacion = $tipoIdentificacion;
+    }
+
+    function setIdentificacion($identificacion) {
+        $this->identificacion = $identificacion;
+    }
+
+    function setNombres($nombres) {
+        $this->nombres = $nombres;
+    }
+
+    function setApellidos($apellidos) {
+        $this->apellidos = $apellidos;
     }
 
     function setFechaExpeMan($fechaExpeMan) {
@@ -119,6 +180,14 @@ class cliente extends database {
         $this->ciudadExped = $ciudadExped;
     }
 
+    function setFechaNacimiento($fechaNacimiento) {
+        $this->fechaNacimiento = $fechaNacimiento;
+    }
+
+    function setGenero($genero) {
+        $this->genero = $genero;
+    }
+
     function setPaisNaci($paisNaci) {
         $this->paisNaci = $paisNaci;
     }
@@ -129,6 +198,10 @@ class cliente extends database {
 
     function setCiudadNaci($ciudadNaci) {
         $this->ciudadNaci = $ciudadNaci;
+    }
+
+    function setNacionalidad($nacionalidad) {
+        $this->nacionalidad = $nacionalidad;
     }
 
     function setSinoNaciona($sinoNaciona) {
@@ -147,6 +220,10 @@ class cliente extends database {
         $this->observReside = $observReside;
     }
 
+    function setNivelEduca($nivelEduca) {
+        $this->nivelEduca = $nivelEduca;
+    }
+
     function setObservNivelEdu($observNivelEdu) {
         $this->observNivelEdu = $observNivelEdu;
     }
@@ -159,125 +236,31 @@ class cliente extends database {
         $this->observTipoVivind = $observTipoVivind;
     }
 
+    function setCiudadResidencia($ciudadResidencia) {
+        $this->ciudadResidencia = $ciudadResidencia;
+    }
+
+    function setEstadoCivil($estadoCivil) {
+        $this->estadoCivil = $estadoCivil;
+    }
+
     function setDireccionClie($direccionClie) {
         $this->direccionClie = $direccionClie;
     }
 
-    function setCelularClie($celularClie) {
-        $this->celularClie = $celularClie;
-    }    
-    
-    function getNivelEduca() {
-        return $this->nivelEduca;
-    }
-
-    function setNivelEduca($nivelEduca) {
-        $this->nivelEduca = $nivelEduca;
-    }
-
-        public function getCiudadResidencia() {
-        return $this->ciudadResidencia;
-    }
- 
-    public function setCiudadResidencia($ciudadResidencia) {
-        $this->ciudadResidencia = $ciudadResidencia;
-    }
-    
-    public function getTelFijo() {
-        return $this->telFijo;
-    }
- 
-    public function setTelFijo($telFijo) {
+    function setTelFijo($telFijo) {
         $this->telFijo = $telFijo;
     }
-    
-    public function getEstadoCivil() {
-        return $this->estadoCivil;
+
+    function setCelularClie($celularClie) {
+        $this->celularClie = $celularClie;
     }
- 
-    public function setEstadoCivil($estadoCivil) {
-        $this->estadoCivil = $estadoCivil;
-    }
-    
-    public function getNacionalidad() {
-        return $this->nacionalidad;
-    }
- 
-    public function setNacionalidad($nacionalidad) {
-        $this->nacionalidad = $nacionalidad;
-    }
-    
-    public function getGenero() {
-        return $this->genero;
-    }
- 
-    public function setGenero($genero) {
-        $this->genero = $genero;
-    }
-    
-    public function getTipoIdentificacion() {
-        return $this->tipoIdentificacion;
-    }
- 
-    public function setTipoIdentificacion($tipoIdentificacion) {
-        $this->tipoIdentificacion = $tipoIdentificacion;
-    }
-    
-    public function getIdentificacion() {
-        return $this->tipoIdentificacion;
-    }
- 
-    public function setIdentificacion($identificacion) {
-        $this->identificacion = $identificacion;
-    }
-    public function getNombres() {
-        return $this->nombres;
-    }
- 
-    public function setNombres($nombres) {
-        $this->nombres = $nombres;
-    }
-    
-    public function getApellidos() {
-        return $this->apellidos;
-    }
- 
-    public function setApellidos($apellidos) {
-        $this->apellidos= $apellidos;
-    }
-    
-    public function getDireccion() {
-        return $this->direccion;
-    }
- 
-    public function setDireccion($direccion) {
-        $this->direccion = $direccion;
-    }
-    
-    public function getFechaNacimiento() {
-        return $this->fechaNacimiento;
-    }
- 
-    public function setFechaNacimiento($fechaNacimiento) {
-        $this->fechaNacimiento = $fechaNacimiento;
-    }
-    
-    public function getCelular() {
-        return $this->direccion;
-    }
- 
-    public function setCelular($celular) {
-        $this->celular = $celular;
-    }
-    
-    public function getEmail() {
-        return $this->email;
-    }
- 
-    public function setEmail($email) {
+
+    function setEmail($email) {
         $this->email = $email;
     }
-    
+
+        
  /* REALIZA UNA CONSULTA A LA BASE DE DATOS EN BUSCA DE REGISTROS UNIVERSITARIOS DADOS COMO
  PARAMETROS LA "CARRERA" Y LA "CANTIDAD" DE REGISTROS A MOSTRAR
  INPUT:

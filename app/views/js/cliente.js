@@ -31,7 +31,6 @@ $( document ).ready(function() {
         datosEnvio.push({ name: "nombresClie"   , value: $("#nombresClie").val() });
         datosEnvio.push({ name: "apellidosClie" , value: $("#apellidosClie").val() });
         datosEnvio.push({ name: "fechaNacClie"  , value: $("#fechaNacClie").val() });
-        datosEnvio.push({ name: "celularClie"   , value: $("#celularClie").val() });
         datosEnvio.push({ name: "fechaExpeMan"     , value: $("#fechaExpeMan").val() });
         datosEnvio.push({ name: "paisExped"     , value: $("#paisExped").val() });
         datosEnvio.push({ name: "deptoExped"     , value: $("#deptoExped").val() });
