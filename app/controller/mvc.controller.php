@@ -187,10 +187,10 @@ function getLibranzasAsociar( )
           return $libranza->libranzasAsociar();
 }
 
-function InsertarCliente($tipoIdent,$ident,$nombre,$apellidos,$fechaNacimiento,$telefono,$fechaExpeMan,$paisExped,$deptoExped,
+function InsertarCliente($tipoIdent,$ident,$nombre,$apellidos,$fechaNacimiento,$fechaExpeMan,$paisExped,$deptoExped,
         $ciudadExped,$genero,$paisNaci,$deptoNaci,$ciudadNaci,$nacionalidad,$sinoNaciona,$observNaciona,$sinoReside,
         $observReside,$estadoCivil,$nivelEduca,$observNivelEdu,$tipoVivien,$observTipoVivind,$ciudadReside,
-        $direccionClie,$telefonoFijo,$celular,$email,$nombrsConyg,$apelldsConyg,$numIdentfcnConyg,$tipoIdentfcnConyg,
+        $direccionClie,$telFijo,$celularClie,$email,$nombrsConyg,$apelldsConyg,$numIdentfcnConyg,$tipoIdentfcnConyg,
         $fijoConyg,$ocupcn,$observOcupcn,$tipoEmprs,$NitEmpre,$Sector,$Empresa,$TelEmpresa,$DirEmpresa,$CargoEmpresa,
         $SueldoActual,$tipoContr,$fechVincEmpr,$RecursPublc,$ObsRecuPubl,$VincRecursPublc,$DeclaraRenta,$SocioEmpre,
         $PorceSoci,$RegiTribu,$Monedaextra,$TipoOpeExtra,$OtraOperExtra,$IngreFijo,$IngreVari,$otroIngre1,
@@ -203,16 +203,77 @@ function InsertarCliente($tipoIdent,$ident,$nombre,$apellidos,$fechaNacimiento,$
     $cliente->setIdentificacion( $ident );
     $cliente->setNombres( $nombre );
     $cliente->setApellidos( $apellidos );
-    $cliente->setDireccion( $direccion );
-    $cliente->setFechaNacimiento( $fechaNacimiento );
-    $cliente->setCelular( $celular );
-    $cliente->setEmail( $email );
-    $cliente->setNacionalidad($nacionalidad);
+    $cliente->setfechaNacimiento($fechaNacimiento );
+    $cliente->setFechaExpeMan($fechaExpeMan);
+    $cliente->setPaisExped( $paisExped );
+    $cliente->setDeptoExped( $deptoExped );
+    $cliente->setCiudadExped($ciudadExped);
     $cliente->setGenero($genero);
-    $cliente->setCiudadResidencia($ciudadResidencia);
+    $cliente->setPaisNaci($paisNaci);
+    $cliente->setDeptoNaci($deptoNaci);
+    $cliente->setCiudadNaci($ciudadNaci);
+    $cliente->setNacionalidad($nacionalidad);
+    $cliente->setSinoNaciona($sinoNaciona);
+    $cliente->setObservNaciona($observNaciona);
+    $cliente->setSinoReside($sinoReside);
+    $cliente->setObservReside($observReside);
     $cliente->setEstadoCivil($estadoCivil);
-    $cliente->setTelFijo($telefono);
-            
+    $cliente->setNivelEduca($nivelEduca);
+    $cliente->setObservNivelEdu($observNivelEdu);
+    $cliente->setTipoVivien($tipoVivien);
+    $cliente->setObservTipoVivind($observTipoVivind);
+    $cliente->setCiudadReside($ciudadReside);
+    $cliente->setDireccionClie($direccionClie);
+    $cliente->setTelFijo($telFijo);
+    $cliente->setCelularClie($celularClie);
+    $cliente->setEmail($email);
+    $cliente->setNombrsConyg($nombrsConyg);
+    $cliente->setApelldsConyg($apelldsConyg);
+    $cliente->setNumIdentfcnConyg($numIdentfcnConyg);
+    $cliente->setTipoIdentfcnConyg($tipoIdentfcnConyg);
+    $cliente->setFijoConyg($fijoConyg);
+    $cliente->setOcupcn($ocupcn);
+    $cliente->setObservOcupcn($observOcupcn);
+    $cliente->setTipoEmprs($tipoEmprs);
+    $cliente->setNitEmpre($NitEmpre);
+    $cliente->setSector($Sector);
+    $cliente->setEmpresa($Empresa);
+    $cliente->setTelEmpresa($TelEmpresa);
+    $cliente->setDirEmpresa($DirEmpresa);
+    $cliente->setCargoEmpresa($CargoEmpresa);
+    $cliente->setSueldoActual($SueldoActual);
+    $cliente->setTipoContr($tipoContr);
+    $cliente->setFechVincEmpr($fechVincEmpr);
+    $cliente->setRecursPublc($RecursPublc);
+    $cliente->setObsRecuPubl($ObsRecuPubl);
+    $cliente->setVincRecursPublc($VincRecursPublc);
+    $cliente->setDeclaraRenta($DeclaraRenta);
+    $cliente->setSocioEmpre($SocioEmpre);
+    $cliente->setPorceSoci($PorceSoci);
+    $cliente->setRegiTribu($RegiTribu);
+    $cliente->setMonedaextra($Monedaextra);
+    $cliente->setTipoOpeExtra($TipoOpeExtra);
+    $cliente->setOtraOperExtra($OtraOperExtra);
+    $cliente->setIngreFijo($IngreFijo);
+    $cliente->setIngreVari($IngreVari);
+    $cliente->setOtroIngre1($otroIngre1);
+    $cliente->setOtroIngre2($otroIngre2);
+    $cliente->setHipoteca($Hipoteca);
+    $cliente->setEgreCredi($EgreCredi);
+    $cliente->setGastoFami($gastoFami);
+    $cliente->setOtroEngre($otroEngre);
+    $cliente->setTotalEgr($TotalEgr);
+    $cliente->setVivienda($Vivienda);
+    $cliente->setVehiculos($Vehiculos);
+    $cliente->setInver($Inver);
+    $cliente->setOtroAct($otroAct);
+    $cliente->setTotalAct($TotalAct);
+    $cliente->setPasHipo($PasHipo);
+    $cliente->setPasTc($PasTc);
+    $cliente->setOtrObli($otrObli);
+    $cliente->setOtroPas($otroPas);
+    $cliente->setTotalPas($TotalPas);
+    
     return $cliente->insertarCliente();
                       
 }

@@ -46,9 +46,9 @@ $( document ).ready(function() {
         datosEnvio.push({ name: "sinoReside"     , value: $("#sinoReside").val() });
         datosEnvio.push({ name: "observReside"     , value: $("#observReside").val() });
         datosEnvio.push({ name: "estadoCivil"     , value: $("#estadoCivil option:selected ").val() });
-        datosEnvio.push({ name: "nivelEduca"     , value: $("#nivelEduca option:selected").val() });
+        datosEnvio.push({ name: "nivelEduca"     , value: $("#nivelEduca option:selected ").val() });
         datosEnvio.push({ name: "observNivelEdu"     , value: $("#observNivelEdu").val() });
-        datosEnvio.push({ name: "tipoVivien"     , value: $("#tipoVivien option:selected").val() });
+        datosEnvio.push({ name: "tipoVivien"     , value: $("#tipoVivien option:selected ").val() });
         datosEnvio.push({ name: "observTipoVivind"     , value: $("#observTipoVivind").val() });
         datosEnvio.push({ name: "ciudadReside"     , value: $("#ciudadReside").val() });
         datosEnvio.push({ name: "direccionClie"     , value: $("#direccionClie").val() });
@@ -65,9 +65,9 @@ $( document ).ready(function() {
         
         /*******Captura de datos de la actividad economica******/
         
-        datosEnvio.push({ name: "ocupcn"     , value: $("#ocupcn option:selected").val() });
+        datosEnvio.push({ name: "ocupcn"     , value: $("#ocupcn option:selected ").val() });
         datosEnvio.push({ name: "observOcupcn"     , value: $("#observOcupcn").val() });
-        datosEnvio.push({ name: "tipoEmprs"     , value: $("#tipoEmprs option:selected").val() });
+        datosEnvio.push({ name: "tipoEmprs"     , value: $("#tipoEmprs option:selected ").val() });
         datosEnvio.push({ name: "NitEmpre"     , value: $("#NitEmpre").val() });
         datosEnvio.push({ name: "Sector"     , value: $("#Sector").val() });
         datosEnvio.push({ name: "Empresa"     , value: $("#Empresa").val() });
@@ -75,15 +75,15 @@ $( document ).ready(function() {
         datosEnvio.push({ name: "DirEmpresa"     , value: $("#DirEmpresa").val() });
         datosEnvio.push({ name: "CargoEmpresa"     , value: $("#CargoEmpresa").val() });
         datosEnvio.push({ name: "SueldoActual"     , value: $("#SueldoActual").val() });
-        datosEnvio.push({ name: "tipoContr"     , value: $("#tipoContr option: selected").val() });
+        datosEnvio.push({ name: "tipoContr"     , value: $("#tipoCont option:selected").val() });
         datosEnvio.push({ name: "fechVincEmpr"     , value: $("#fechVincEmpr").val() });
-        datosEnvio.push({ name: "RecursPublc"     , value: $("#RecursPublc option: selected").val() });
+        datosEnvio.push({ name: "Recurs"     , value: $("#RecursPubl option:selected ").val() });
         datosEnvio.push({ name: "ObsRecuPubl"     , value: $("#ObsRecuPubl").val() });
-        datosEnvio.push({ name: "VincRecursPublc"     , value: $("#VincRecursPublc option: selected").val() });
-        datosEnvio.push({ name: "DeclaraRenta"     , value: $("#DeclaraRenta option: selected").val() });
-        datosEnvio.push({ name: "SocioEmpre"     , value: $("#SocioEmpre option: selected").val() });
+        datosEnvio.push({ name: "VincRecurs"     , value: $("#VincRecursPubl option:selected ").val() });
+        datosEnvio.push({ name: "DeclaraRenta"     , value: $("#DeclaraRenta option:selected ").val() });
+        datosEnvio.push({ name: "SocioEmpre"     , value: $("#SocioEmpre option:selected ").val() });
         datosEnvio.push({ name: "PorceSoci"     , value: $("#PorceSoci").val() });
-        datosEnvio.push({ name: "RegiTribu"     , value: $("#RegiTribu option: selected").val() });
+        datosEnvio.push({ name: "RegiTribu"     , value: $("#RegiTribu option:selected ").val() });
         
          /*******Captura de datos de OPERACIONES EN MONEDA EXTRANJERA ******/
          

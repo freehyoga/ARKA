@@ -29,13 +29,428 @@ class cliente extends database {
     private $observNivelEdu ;
     private $tipoVivien;
     private $observTipoVivind; 	
-    private $ciudadResidencia;
+    private $ciudadReside;
     private $estadoCivil;
     private $direccionClie  ;	
     private $telFijo;
     private $celularClie;
     private $email;    
     
+    private $nombrsConyg ;             
+    private $apelldsConyg ;            
+    private $numIdentfcnConyg ;        
+    private $tipoIdentfcnConyg ;       
+    private $fijoConyg ;               
+    private $ocupcn ;                  
+    private $observOcupcn ;            
+    private $tipoEmprs ;               
+    private $NitEmpre ;                
+    private $Sector ;                  
+    private $Empresa ;                 
+    private $TelEmpresa ;              
+    private $DirEmpresa ;              
+    private $CargoEmpresa ;            
+    private $SueldoActual ;            
+    private $tipoContr ;               
+    private $fechVincEmpr ;            
+    private $RecursPublc ;             
+    private $ObsRecuPubl ;             
+    private $VincRecursPublc ;         
+    private $DeclaraRenta ;            
+    private $SocioEmpre ;              
+    private $PorceSoci ;               
+    private $RegiTribu ;               
+    private $Monedaextra ;             
+    private $TipoOpeExtra ;            
+    private $OtraOperExtra ;           
+    private $IngreFijo ;               
+    private $IngreVari ;               
+    private $otroIngre1 ;              
+    private $otroIngre2 ;              
+    private $Hipoteca ;                
+    private $EgreCredi ;               
+    private $gastoFami ;               
+    private $otroEngre ;               
+    private $TotalEgr ;                
+    private $Vivienda ;                
+    private $Vehiculos ;               
+    private $Inver ;                   
+    private $otroAct ;                 
+    private $TotalAct ;                
+    private $PasHipo ;                 
+    private $PasTc ;                   
+    private $otrObli ;                 
+    private $otroPas ;                 
+    private $TotalPas;
+    
+    function getNombrsConyg() {
+        return $this->nombrsConyg;
+    }
+
+    function getApelldsConyg() {
+        return $this->apelldsConyg;
+    }
+
+    function getNumIdentfcnConyg() {
+        return $this->numIdentfcnConyg;
+    }
+
+    function getTipoIdentfcnConyg() {
+        return $this->tipoIdentfcnConyg;
+    }
+
+    function getFijoConyg() {
+        return $this->fijoConyg;
+    }
+
+    function getOcupcn() {
+        return $this->ocupcn;
+    }
+
+    function getObservOcupcn() {
+        return $this->observOcupcn;
+    }
+
+    function getTipoEmprs() {
+        return $this->tipoEmprs;
+    }
+
+    function getNitEmpre() {
+        return $this->NitEmpre;
+    }
+
+    function getSector() {
+        return $this->Sector;
+    }
+
+    function getEmpresa() {
+        return $this->Empresa;
+    }
+
+    function getTelEmpresa() {
+        return $this->TelEmpresa;
+    }
+
+    function getDirEmpresa() {
+        return $this->DirEmpresa;
+    }
+
+    function getCargoEmpresa() {
+        return $this->CargoEmpresa;
+    }
+
+    function getSueldoActual() {
+        return $this->SueldoActual;
+    }
+
+    function getTipoContr() {
+        return $this->tipoContr;
+    }
+
+    function getFechVincEmpr() {
+        return $this->fechVincEmpr;
+    }
+
+    function getRecursPublc() {
+        return $this->RecursPublc;
+    }
+
+    function getObsRecuPubl() {
+        return $this->ObsRecuPubl;
+    }
+
+    function getVincRecursPublc() {
+        return $this->VincRecursPublc;
+    }
+
+    function getDeclaraRenta() {
+        return $this->DeclaraRenta;
+    }
+
+    function getSocioEmpre() {
+        return $this->SocioEmpre;
+    }
+
+    function getPorceSoci() {
+        return $this->PorceSoci;
+    }
+
+    function getRegiTribu() {
+        return $this->RegiTribu;
+    }
+
+    function getMonedaextra() {
+        return $this->Monedaextra;
+    }
+
+    function getTipoOpeExtra() {
+        return $this->TipoOpeExtra;
+    }
+
+    function getOtraOperExtra() {
+        return $this->OtraOperExtra;
+    }
+
+    function getIngreFijo() {
+        return $this->IngreFijo;
+    }
+
+    function getIngreVari() {
+        return $this->IngreVari;
+    }
+
+    function getOtroIngre1() {
+        return $this->otroIngre1;
+    }
+
+    function getOtroIngre2() {
+        return $this->otroIngre2;
+    }
+
+    function getHipoteca() {
+        return $this->Hipoteca;
+    }
+
+    function getEgreCredi() {
+        return $this->EgreCredi;
+    }
+
+    function getGastoFami() {
+        return $this->gastoFami;
+    }
+
+    function getOtroEngre() {
+        return $this->otroEngre;
+    }
+
+    function getTotalEgr() {
+        return $this->TotalEgr;
+    }
+
+    function getVivienda() {
+        return $this->Vivienda;
+    }
+
+    function getVehiculos() {
+        return $this->Vehiculos;
+    }
+
+    function getInver() {
+        return $this->Inver;
+    }
+
+    function getOtroAct() {
+        return $this->otroAct;
+    }
+
+    function getTotalAct() {
+        return $this->TotalAct;
+    }
+
+    function getPasHipo() {
+        return $this->PasHipo;
+    }
+
+    function getPasTc() {
+        return $this->PasTc;
+    }
+
+    function getOtrObli() {
+        return $this->otrObli;
+    }
+
+    function getOtroPas() {
+        return $this->otroPas;
+    }
+
+    function getTotalPas() {
+        return $this->TotalPas;
+    }
+
+    function setNombrsConyg($nombrsConyg) {
+        $this->nombrsConyg = $nombrsConyg;
+    }
+
+    function setApelldsConyg($apelldsConyg) {
+        $this->apelldsConyg = $apelldsConyg;
+    }
+
+    function setNumIdentfcnConyg($numIdentfcnConyg) {
+        $this->numIdentfcnConyg = $numIdentfcnConyg;
+    }
+
+    function setTipoIdentfcnConyg($tipoIdentfcnConyg) {
+        $this->tipoIdentfcnConyg = $tipoIdentfcnConyg;
+    }
+
+    function setFijoConyg($fijoConyg) {
+        $this->fijoConyg = $fijoConyg;
+    }
+
+    function setOcupcn($ocupcn) {
+        $this->ocupcn = $ocupcn;
+    }
+
+    function setObservOcupcn($observOcupcn) {
+        $this->observOcupcn = $observOcupcn;
+    }
+
+    function setTipoEmprs($tipoEmprs) {
+        $this->tipoEmprs = $tipoEmprs;
+    }
+
+    function setNitEmpre($NitEmpre) {
+        $this->NitEmpre = $NitEmpre;
+    }
+
+    function setSector($Sector) {
+        $this->Sector = $Sector;
+    }
+
+    function setEmpresa($Empresa) {
+        $this->Empresa = $Empresa;
+    }
+
+    function setTelEmpresa($TelEmpresa) {
+        $this->TelEmpresa = $TelEmpresa;
+    }
+
+    function setDirEmpresa($DirEmpresa) {
+        $this->DirEmpresa = $DirEmpresa;
+    }
+
+    function setCargoEmpresa($CargoEmpresa) {
+        $this->CargoEmpresa = $CargoEmpresa;
+    }
+
+    function setSueldoActual($SueldoActual) {
+        $this->SueldoActual = $SueldoActual;
+    }
+
+    function setTipoContr($tipoContr) {
+        $this->tipoContr = $tipoContr;
+    }
+
+    function setFechVincEmpr($fechVincEmpr) {
+        $this->fechVincEmpr = $fechVincEmpr;
+    }
+
+    function setRecursPublc($RecursPublc) {
+        $this->RecursPublc = $RecursPublc;
+    }
+
+    function setObsRecuPubl($ObsRecuPubl) {
+        $this->ObsRecuPubl = $ObsRecuPubl;
+    }
+
+    function setVincRecursPublc($VincRecursPublc) {
+        $this->VincRecursPublc = $VincRecursPublc;
+    }
+
+    function setDeclaraRenta($DeclaraRenta) {
+        $this->DeclaraRenta = $DeclaraRenta;
+    }
+
+    function setSocioEmpre($SocioEmpre) {
+        $this->SocioEmpre = $SocioEmpre;
+    }
+
+    function setPorceSoci($PorceSoci) {
+        $this->PorceSoci = $PorceSoci;
+    }
+
+    function setRegiTribu($RegiTribu) {
+        $this->RegiTribu = $RegiTribu;
+    }
+
+    function setMonedaextra($Monedaextra) {
+        $this->Monedaextra = $Monedaextra;
+    }
+
+    function setTipoOpeExtra($TipoOpeExtra) {
+        $this->TipoOpeExtra = $TipoOpeExtra;
+    }
+
+    function setOtraOperExtra($OtraOperExtra) {
+        $this->OtraOperExtra = $OtraOperExtra;
+    }
+
+    function setIngreFijo($IngreFijo) {
+        $this->IngreFijo = $IngreFijo;
+    }
+
+    function setIngreVari($IngreVari) {
+        $this->IngreVari = $IngreVari;
+    }
+
+    function setOtroIngre1($otroIngre1) {
+        $this->otroIngre1 = $otroIngre1;
+    }
+
+    function setOtroIngre2($otroIngre2) {
+        $this->otroIngre2 = $otroIngre2;
+    }
+
+    function setHipoteca($Hipoteca) {
+        $this->Hipoteca = $Hipoteca;
+    }
+
+    function setEgreCredi($EgreCredi) {
+        $this->EgreCredi = $EgreCredi;
+    }
+
+    function setGastoFami($gastoFami) {
+        $this->gastoFami = $gastoFami;
+    }
+
+    function setOtroEngre($otroEngre) {
+        $this->otroEngre = $otroEngre;
+    }
+
+    function setTotalEgr($TotalEgr) {
+        $this->TotalEgr = $TotalEgr;
+    }
+
+    function setVivienda($Vivienda) {
+        $this->Vivienda = $Vivienda;
+    }
+
+    function setVehiculos($Vehiculos) {
+        $this->Vehiculos = $Vehiculos;
+    }
+
+    function setInver($Inver) {
+        $this->Inver = $Inver;
+    }
+
+    function setOtroAct($otroAct) {
+        $this->otroAct = $otroAct;
+    }
+
+    function setTotalAct($TotalAct) {
+        $this->TotalAct = $TotalAct;
+    }
+
+    function setPasHipo($PasHipo) {
+        $this->PasHipo = $PasHipo;
+    }
+
+    function setPasTc($PasTc) {
+        $this->PasTc = $PasTc;
+    }
+
+    function setOtrObli($otrObli) {
+        $this->otrObli = $otrObli;
+    }
+
+    function setOtroPas($otroPas) {
+        $this->otroPas = $otroPas;
+    }
+
+    function setTotalPas($TotalPas) {
+        $this->TotalPas = $TotalPas;
+    }
+
     function getTipoIdentificacion() {
         return $this->tipoIdentificacion;
     }
@@ -124,8 +539,8 @@ class cliente extends database {
         return $this->observTipoVivind;
     }
 
-    function getCiudadResidencia() {
-        return $this->ciudadResidencia;
+    function getCiudadReside() {
+        return $this->ciudadReside;
     }
 
     function getEstadoCivil() {
@@ -236,8 +651,8 @@ class cliente extends database {
         $this->observTipoVivind = $observTipoVivind;
     }
 
-    function setCiudadResidencia($ciudadResidencia) {
-        $this->ciudadResidencia = $ciudadResidencia;
+    function setCiudadReside($ciudadReside) {
+        $this->ciudadResidencia = $ciudadReside;
     }
 
     function setEstadoCivil($estadoCivil) {
@@ -273,10 +688,12 @@ class cliente extends database {
  {
     //conexion a la base de datos
     $this->conectar();
-    $consulta = "SELECT ti.tipoIdentificacion as idTipoIdentificacion, ti.identificacion as TipoIdentificacion, c.identificacion, c.nombres,"
+    $consulta = "SELECT ti.tipoIdentificacion as idTipoIdentificacion, ti.identificacion as TipoIdentificacion, c.identificacion, c.nombres,c.apellidos,c.Fec_Nacimiento_cte  "
+            . "FROM cliente c,tipoidentificacion ti  where c.tipoIdentificacion = ti.tipoIdentificacion ";
+    /**$consulta = "SELECT ti.tipoIdentificacion as idTipoIdentificacion, ti.identificacion as TipoIdentificacion, c.identificacion, c.nombres,"
               . "c.apellidos, c.telefono, c.correo, c.fechaNacimiento, c.direccion "
               . " FROM cliente c,tipoidentificacion ti "
-              . " where c.tipoIdentificacion = ti.tipoIdentificacion ";
+              . " where c.tipoIdentificacion = ti.tipoIdentificacion ";**/
     
     if( $tipoIden != null && $tipoIden != '' && $tipoIden != '0' ){
         $consulta .= " AND c.tipoIdentificacion = '" . $tipoIden ."'";
@@ -336,9 +753,10 @@ class cliente extends database {
             . "'" . $this->tipoIdentificacion . "',"
             . "'" . $this->nombres . "',"
             . "'" . $this->apellidos . "',"
+            . "'" . $this->estadoCivil . "',"
             . "'" . $this->fechaNacimiento . "',"
             . "'" . $this->genero . "',"
-            . "'" . $this->nivelEduca . "',"
+            . "'" . $this->nivelEduca . "'"
             . ")" ;
     $save = $this->consulta( $query );
     

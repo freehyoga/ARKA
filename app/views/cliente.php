@@ -391,8 +391,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label class="control-label" for="tipoContr">Tipo de contrato:</label>  
-                        <select id="tipoContr" name="tipoContr" class="form-control">
+                        <label class="control-label" for="tipoCont">Tipo de contrato:</label>  
+                        <select id="tipoCont" name="tipoCont" class="form-control">
                             <option value="">Seleccione...</option>
                             <option value="Fijo">Término Fijo</option>
                             <option value="Indefinido">Término Indefinido</option>
@@ -408,8 +408,8 @@
                 </div>
                 <div class="col-md-3" >
                     <div class="form-group">
-                        <label class="control-label" for="RecursPublc">Administra Recursos Publicos:</label>  
-                        <select id="RecursPublc" name="RecursPublc" class="form-control">
+                        <label class="control-label" for="RecursPubl">Administra Recursos Publicos:</label>  
+                        <select id="RecursPubl" name="RecursPubl" class="form-control">
                             <option value="">Seleccione...</option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
