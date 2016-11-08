@@ -28,7 +28,7 @@
                 $nombre    = $_POST['nombresClie'];
                 $apellidos = $_POST['apellidosClie'];
                 $fechaNacimiento = $_POST['fechaNacClie'];
-                $fechaExpeMan  = $_POST['fechaExpeMan'];
+                $fechaExped  = $_POST['fechaExped'];
                 
                 $paisExped  = $_POST['paisExped'];
                 $deptoExped  = $_POST['deptoExped'];
@@ -88,6 +88,7 @@
                 $IngreVari = $_POST['IngreVari'];
                 $otroIngre1 = $_POST['otroIngre1'];
                 $otroIngre2 = $_POST['otroIngre2'];
+                $totalIngr = $_POST['totalIngr'];
                 $Hipoteca = $_POST['Hipoteca'];
                 $EgreCredi = $_POST['EgreCredi'];
                 $gastoFami = $_POST['gastoFami'];
@@ -112,7 +113,7 @@
                             $nombre    ,               
                             $apellidos ,               
                             $fechaNacimiento ,                      
-                            $fechaExpeMan  ,           
+                            $fechaExped  ,           
 
                             $paisExped  ,              
                             $deptoExped  ,             
@@ -171,7 +172,8 @@
                             $IngreFijo ,               
                             $IngreVari ,               
                             $otroIngre1 ,              
-                            $otroIngre2 ,              
+                            $otroIngre2 ,  
+                            $totalIngr,
                             $Hipoteca ,                
                             $EgreCredi ,               
                             $gastoFami ,               

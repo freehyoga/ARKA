@@ -11,7 +11,7 @@ class cliente extends database {
     private $nombres;
     private $apellidos;
 
-    private $fechaExpeMan;
+    private $fechaExped;
     private $paisExped ;
     private $deptoExped;
     private $ciudadExped ;
@@ -66,7 +66,8 @@ class cliente extends database {
     private $IngreFijo ;               
     private $IngreVari ;               
     private $otroIngre1 ;              
-    private $otroIngre2 ;              
+    private $otroIngre2 ; 
+    private $totalIngr;
     private $Hipoteca ;                
     private $EgreCredi ;               
     private $gastoFami ;               
@@ -83,7 +84,15 @@ class cliente extends database {
     private $otroPas ;                 
     private $TotalPas;
     
-    function getNombrsConyg() {
+    function getTotalIngr() {
+        return $this->totalIngr;
+    }
+
+    function setTotalIngr($totalIngr) {
+        $this->totalIngr = $totalIngr;
+    }
+
+        function getNombrsConyg() {
         return $this->nombrsConyg;
     }
 
@@ -468,7 +477,7 @@ class cliente extends database {
     }
 
     function getFechaExpeMan() {
-        return $this->fechaExpeMan;
+        return $this->fechaExped;
     }
 
     function getPaisExped() {
@@ -579,8 +588,8 @@ class cliente extends database {
         $this->apellidos = $apellidos;
     }
 
-    function setFechaExpeMan($fechaExpeMan) {
-        $this->fechaExpeMan = $fechaExpeMan;
+    function setFechaExpeMan($fechaExped) {
+        $this->fechaExped = $fechaExped;
     }
 
     function setPaisExped($paisExped) {
@@ -760,12 +769,104 @@ class cliente extends database {
             . ")" ;
     $save = $this->consulta( $query );
     
+    $query_contct = "INSERT INTO contacto_cliente VALUES "
+            . "( '" . $this->identificacion . "',"
+            . "'" . $this->tipoIdentificacion . "',"
+            . "'" . $this->ciudadReside . "',"
+            . "'" . $this->direccionClie . "',"
+            . "'" . $this->telFijo . "',"
+            . "'" . $this->celularClie . "',"
+            . "'" . $this->email . "'"
+            . ")" ;
+    $save = $this->consulta( $query_contct );
+    
+    $query_conyg = "INSERT INTO conyuge VALUES "
+            . "( '" . $this->numIdentfcnConyg . "',"
+            . "'" . $this->tipoIdentfcnConyg . "',"
+            . "'" . $this->apelldsConyg . "',"
+            . "'" . $this->nombrsConyg . "',"
+            . "'" . $this->fijoConyg . "',"
+            . "'" . $this->identificacion . "',"
+            . "'" . $this->tipoIdentificacion . "'"
+            . ")" ;
+    $save = $this->consulta( $query_conyg );
+    
+    //faltan otros ingresos2
+    $query_financ = "INSERT INTO financiera_cliente VALUES "
+            . "( '" . $this->identificacion . "',"
+            . "'" . $this->tipoIdentificacion . "',"
+            . "'" . $this->Monedaextra . "',"
+            . "'" . $this->TipoOpeExtra . "',"
+            . "'" . $this->IngreFijo . "',"
+            . "'" . $this->IngreVari . "',"
+            . "'" . $this->otroIngre1 . "',"
+            . "'" . $this->otroIngre2 . "',"
+            . "'" . $this->totalIngr . "',"
+            . "'" . $this->Hipoteca . "',"
+            . "'" . $this->EgreCredi . "',"
+            . "'" . $this->gastoFami . "',"
+            . "'" . $this->otroEngre . "',"
+            . "'" . $this->TotalEgr . "',"
+            . "'" . $this->Vivienda . "',"
+            . "'" . $this->Vehiculos . "',"
+            . "'" . $this->Inver . "',"
+            . "'" . $this->otroAct . "',"
+            . "'" . $this->TotalAct . "',"
+            . "'" . $this->PasHipo. "',"
+            . "'" . $this->PasTc. "',"
+            . "'" . $this->otrObli. "',"
+            . "'" . $this->otroPas. "'"
+            . "'" . $this->TotalPas. "'"
+            . ")" ;
+    
+    $save = $this->consulta( $query_financ );
+    
+    //faltan otros ingresos2
+    $query_infocli = "INSERT INTO info_cliente VALUES "
+            . "( '" . $this->identificacion . "',"
+            . "'" . $this->tipoIdentificacion . "',"
+            . "'" . $this->fechaExped . "',"            
+            . "'" . $this->fechaExped . "',"
+            . "'" . $this->paisExped . "',"
+            . "'" . $this->deptoExped . "',"            
+            . "'" . $this->ciudadExped . "',"            
+            . "'" . $this->paisNaci . "',"
+            . "'" . $this->deptoNaci . "',"
+            . "'" . $this->ciudadNaci . "',"            
+            . "'" . $this->nacionalidad . "',"
+            . "'" . $this->sinoNaciona . "',"
+            . "'" . $this->observNaciona . "',"
+            . "'" . $this->sinoReside . "',"            
+            . "'" . $this->observReside . "',"
+            . "'" . $this->tipoVivien . "',"
+            . "'" . $this->ocupcn . "',"
+            . "'" . $this->tipoEmprs . "',"
+            . "'" . $this->NitEmpre . "',"
+            . "'" . $this->Sector . "',"
+            . "'" . $this->Empresa . "',"
+            . "'" . $this->TelEmpresa . "',"
+            . "'" . $this-> DirEmpresa. "',"
+            . "'" . $this-> CargoEmpresa. "',"
+            . "'" . $this->SueldoActual. "',"
+            . "'" . $this-> tipoContr. "',"
+            . "'" . $this-> fechVincEmpr. "',"
+            . "'" . $this-> ObsRecuPubl. "',"
+            . "'" . $this-> VincRecursPublc. "',"
+            . "'" . $this-> DeclaraRenta. "',"
+            . "'" . $this-> SocioEmpre. "',"
+            . "'" . $this-> PorceSoci. "'"
+            . "'" . $this-> RegiTribu. "'"
+            . ")" ;
+    
+    $save = $this->consulta( $query_infocli );
+    
+    
     $queryUser = "INSERT INTO usuario values "
             . "( '" . $this->tipoIdentificacion . "',"
             . "'" . $this->identificacion . "',"
             . "'" . md5($this->identificacion) . "',"
-            . "'" . $this->nombres . "',"
             . "'3',"
+            . "'" . $this->nombres . "',"
             . "'" . $this->apellidos . "',"
             . "'0','1'"
             . ")" ;

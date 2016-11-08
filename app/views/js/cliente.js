@@ -31,7 +31,7 @@ $( document ).ready(function() {
         datosEnvio.push({ name: "nombresClie"   , value: $("#nombresClie").val() });
         datosEnvio.push({ name: "apellidosClie" , value: $("#apellidosClie").val() });
         datosEnvio.push({ name: "fechaNacClie"  , value: $("#fechaNacClie").val() });
-        datosEnvio.push({ name: "fechaExpeMan"     , value: $("#fechaExpeMan").val() });
+        datosEnvio.push({ name: "fechaExped"     , value: $("#fechaExped").val() });
         datosEnvio.push({ name: "paisExped"     , value: $("#paisExped").val() });
         datosEnvio.push({ name: "deptoExped"     , value: $("#deptoExped").val() });
         datosEnvio.push({ name: "ciudadExped"     , value: $("#ciudadExped").val() });
@@ -96,7 +96,8 @@ $( document ).ready(function() {
          datosEnvio.push({ name: "IngreFijo"     , value: $("#IngreFijo").val() });
          datosEnvio.push({ name: "IngreVari"     , value: $("#IngreVari").val() });
          datosEnvio.push({ name: "otroIngre1"     , value: $("#otroIngre1").val() });
-         datosEnvio.push({ name: "otroIngre2"     , value: $("#TotalIngr").val() });
+         datosEnvio.push({ name: "otroIngre2"     , value: $("#otroIngre2").val() });
+         datosEnvio.push({ name: "totalIngr"     , value: $("#TotalIngr").val() });
          datosEnvio.push({ name: "Hipoteca"     , value: $("#Hipoteca").val() });
          datosEnvio.push({ name: "EgreCredi"     , value: $("#EgreCredi").val() });
          datosEnvio.push({ name: "gastoFami"     , value: $("#gastoFami").val() });

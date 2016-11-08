@@ -72,8 +72,8 @@
                 </div>
                 <div class="col-md-4" >
                     <div class="form-group">
-                        <label class="control-label" for="fechaExpeMan">Fecha Expedición:</label>   
-                        <input id="fechaExpeMan" name="fechaExpeMan" type="text" placeholder="AAAA/MM/DD" class="form-control input-md" required="">
+                        <label class="control-label" for="fechaExped">Fecha Expedición:</label>   
+                        <input id="fechaExped" name="fechaExped" type="text" placeholder="AAAA/MM/DD" class="form-control input-md" required="">
                     </div>
                 </div>
                 <div class="col-md-3" >

@@ -194,7 +194,7 @@ function InsertarCliente($tipoIdent,$ident,$nombre,$apellidos,$fechaNacimiento,$
         $fijoConyg,$ocupcn,$observOcupcn,$tipoEmprs,$NitEmpre,$Sector,$Empresa,$TelEmpresa,$DirEmpresa,$CargoEmpresa,
         $SueldoActual,$tipoContr,$fechVincEmpr,$RecursPublc,$ObsRecuPubl,$VincRecursPublc,$DeclaraRenta,$SocioEmpre,
         $PorceSoci,$RegiTribu,$Monedaextra,$TipoOpeExtra,$OtraOperExtra,$IngreFijo,$IngreVari,$otroIngre1,
-        $otroIngre2,$Hipoteca,$EgreCredi,$gastoFami,$otroEngre,$TotalEgr,$Vivienda,$Vehiculos,$Inver,$otroAct,
+        $otroIngre2, $totalIngr ,$Hipoteca,$EgreCredi,$gastoFami,$otroEngre,$TotalEgr,$Vivienda,$Vehiculos,$Inver,$otroAct,
         $TotalAct,$PasHipo,$PasTc,$otrObli,$otroPas,$TotalPas)
 {
     $cliente = new cliente();  
@@ -258,6 +258,7 @@ function InsertarCliente($tipoIdent,$ident,$nombre,$apellidos,$fechaNacimiento,$
     $cliente->setIngreVari($IngreVari);
     $cliente->setOtroIngre1($otroIngre1);
     $cliente->setOtroIngre2($otroIngre2);
+    $cliente->setTotalIngr($totalIngr);
     $cliente->setHipoteca($Hipoteca);
     $cliente->setEgreCredi($EgreCredi);
     $cliente->setGastoFami($gastoFami);
