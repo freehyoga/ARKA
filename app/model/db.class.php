@@ -37,7 +37,55 @@ class database {
     $resultado = $this->conexion->query($sql);
     if(!$resultado){
      echo "Error: " . $this->conexion->connect_error . "\n";
+     $this->conexion->rollback();
      exit;
+    }
+    return $resultado;
+ }
+ 
+ /***
+  * 
+  * Metodo para deshabilitar el autocommit
+  * freehyoga
+  * 08/11/2016
+  * 
+  */
+ public function autocommit(){
+    $resultado = $this->conexion->autocommit(false);
+    if(!$resultado){
+        echo "Error: " . $this->conexion->connect_error . "\n";
+        exit;
+    }
+    return $resultado;
+ }
+ 
+ /***
+  * 
+  * Metodo para realizar  el commit
+  * freehyoga
+  * 08/11/2016
+  * 
+  */
+ public function commit(){
+    $resultado = $this->conexion->commit();
+    if(!$resultado){
+        echo "Error: " . $this->conexion->connect_error . "\n";
+        exit;
+    }
+    return $resultado;
+ }
+  /***
+  * 
+  * Metodo para realizar  el commit
+  * freehyoga
+  * 08/11/2016
+  * 
+  */
+ public function rollback(){
+    $resultado = $this->conexion->rollback();
+    if(!$resultado){
+        echo "Error: " . $this->conexion->connect_error . "\n";
+        exit;
     }
     return $resultado;
  }

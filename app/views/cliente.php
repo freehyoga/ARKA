@@ -38,7 +38,7 @@
                 <div class="col-md-6" >
                     <div class="form-group">
                         <label class="control-label" for="nombresClie">Nombres:</label>
-                        <input id="nombresClie" name="nombresClie" type="text" placeholder="Juan Esteban" class="form-control input-md">
+                        <input id="nombresClie" name="nombresClie" type="text" placeholder="Juan Esteban" class="form-control input-md" required/>
                     </div>
                 </div>
                 <div class="col-md-6" >
@@ -64,7 +64,7 @@
                                         echo '<option value=\''. $fila['TipoIdentificacion'] .'\'> ' . $fila['Identificacion'] . '</option>';
                                     }
                                 }else{
-                                    echo '<option value="">Seleccione...</option>';
+                                    echo '<option value="a">Seleccione...</option>';
                                 }
                             ?>
                         </select>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="col-md-2" >
                     <div class="form-group">
-                        <label class="control-label" for="deptoExped">Depto Expedición:</label>   
+                        <label class="control-label" for="deptoExped">Dpto. Expedición:</label>   
                         <input id="deptoExped" name="deptoExped" type="text" class="form-control input-md" required="">
                     </div>
                 </div>
@@ -104,6 +104,7 @@
                     <div class="form-group">
                         <label class="control-label" for="genero">Género:</label>  
                         <select id="genero" name="genero" class="form-control">
+                            <option value="">Seleccione...</option>
                             <option value="M">Masculino</option>
                             <option value="F">Femenino</option>
                         </select>
@@ -117,7 +118,7 @@
                 </div>
                 <div class="col-md-2" >
                     <div class="form-group">
-                        <label class="control-label" for="deptoNaci">Depto Nacimiento:</label>   
+                        <label class="control-label" for="deptoNaci">Dpto. Nacimiento:</label>   
                         <input id="deptoNaci" name="deptoNaci" type="text" class="form-control input-md" required="">
                     </div>
                 </div>
@@ -193,13 +194,13 @@
                             <option value="Tecnico">Técnico</option>
                             <option value="Pregrado">Pregrado</option>
                             <option value="Posgrado">Posgrado</option>
-                            <option value="otro">Otro</option>
+                            <option value="Otro">Otro</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4" >
                     <div class="form-group">
-                        <label class="control-label" for="observNivelEdu">Cual:</label>  
+                        <label class="control-label" for="observNivelEdu">Cuál:</label>  
                         <input id="observNivelEdu" name="observNivelEdu" type="text" class="form-control input-md" required="">
                     </div>
                 </div>
@@ -270,7 +271,7 @@
                 <div class="col-md-6" >
                     <div class="form-group">
                         <label class="control-label" for="nombrsConyg">Nombres Conyuge:</label>
-                        <input id="nombrsConyg" name="nombrsConyg" type="text" placeholder="Juan Esteban" class="form-control input-md">
+                        <input id="nombrsConyg" name="nombrsConyg" type="text" placeholder="Juan Esteban" class="form-control input-md" required>
                     </div>
                 </div>
                 <div class="col-md-6" >

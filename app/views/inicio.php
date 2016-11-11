@@ -172,7 +172,7 @@
                         <div id="tituloMenu"> </div>
                         <!--<hr style="color: #0056b2;"  size="10"/>-->
                         <div id="output">
-                            <h2>Con Edward Force podrás interactuar, manejar y administrar su cartera; así como tus compras y podrás conocer en línea las últimas noticias.</h2>
+                            <h2>Con Edward Force podrá interactuar, manejar y administrar su cartera; así como sus compras y podrá conocer en línea las últimas noticias.</h2>
                         </div>
                         </div>
                 </div>

@@ -757,6 +757,9 @@ class cliente extends database {
  
  function insertarCliente(){
     $this->conectar();
+    
+    $desa = $this->autocommit();
+    
     $query = "INSERT INTO cliente VALUES "
             . "( '" . $this->identificacion . "',"
             . "'" . $this->tipoIdentificacion . "',"
@@ -815,7 +818,7 @@ class cliente extends database {
             . "'" . $this->PasHipo. "',"
             . "'" . $this->PasTc. "',"
             . "'" . $this->otrObli. "',"
-            . "'" . $this->otroPas. "'"
+            . "'" . $this->otroPas. "',"
             . "'" . $this->TotalPas. "'"
             . ")" ;
     
@@ -826,7 +829,6 @@ class cliente extends database {
             . "( '" . $this->identificacion . "',"
             . "'" . $this->tipoIdentificacion . "',"
             . "'" . $this->fechaExped . "',"            
-            . "'" . $this->fechaExped . "',"
             . "'" . $this->paisExped . "',"
             . "'" . $this->deptoExped . "',"            
             . "'" . $this->ciudadExped . "',"            
@@ -834,7 +836,6 @@ class cliente extends database {
             . "'" . $this->deptoNaci . "',"
             . "'" . $this->ciudadNaci . "',"            
             . "'" . $this->nacionalidad . "',"
-            . "'" . $this->sinoNaciona . "',"
             . "'" . $this->observNaciona . "',"
             . "'" . $this->sinoReside . "',"            
             . "'" . $this->observReside . "',"
@@ -854,7 +855,7 @@ class cliente extends database {
             . "'" . $this-> VincRecursPublc. "',"
             . "'" . $this-> DeclaraRenta. "',"
             . "'" . $this-> SocioEmpre. "',"
-            . "'" . $this-> PorceSoci. "'"
+            . "'" . $this-> PorceSoci. "',"
             . "'" . $this-> RegiTribu. "'"
             . ")" ;
     
@@ -872,7 +873,7 @@ class cliente extends database {
             . ")" ;
     
     $save2 = $this->consulta( $queryUser );
-    
+    $commit = $this->commit();
     $this->disconnect();
     return $save;
      

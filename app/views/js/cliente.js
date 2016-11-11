@@ -5,6 +5,12 @@ $( document ).ready(function() {
     $("#fechaNacClie").datepicker({
        format: 'yyyy/mm/dd',
     });
+    $("#fechaExped").datepicker({
+       format: 'yyyy/mm/dd',
+    });
+    $("#fechVincEmpr").datepicker({
+       format: 'yyyy/mm/dd',
+    });
    
     
 
@@ -24,7 +30,13 @@ $( document ).ready(function() {
     });
     
     $('#btnformCliente').click(function(){
-        
+        var ver;
+        ver = validar();
+        if (ver != ""){
+            alert(ver);
+            return false;
+        }
+     
         var datosEnvio = new Array;
         datosEnvio.push({ name: "tipoIdentifica", value: $("#tipoIdentifica option:selected ").val() });
         datosEnvio.push({ name: "numIdentifica" , value: $("#numIdentifica").val() });
@@ -144,14 +156,121 @@ $( document ).ready(function() {
         reportePDF(tipo, ident);
      });
     
-    
-    
-
-    
-    
-   
 });
 
+
+function validar(){
+    var todo_correcto ;
+    todo_correcto = true;
+    if(document.getElementById('nombresClie').value.length == "" ){
+         todo_correcto = "Nombres Cliente\n";
+    }
+    if (document.getElementById('apellidosClie').value.length == "" ){
+         todo_correcto = todo_correcto + "Apellidos Cliente\n";
+    }
+    if ( isNaN(document.getElementById('numIdentifica').value) || document.getElementById('numIdentifica').value.length == "" ){
+         todo_correcto = todo_correcto + "Identificación\n";
+    }
+
+    if (document.getElementById('tipoIdentifica').value == "0" ){
+         todo_correcto = todo_correcto + "Tipo Identificación\n";
+    }
+    
+     if (document.getElementById('fechaExped').value.length == "" ){
+         todo_correcto = todo_correcto + "Fecha Expedición\n";
+    }    
+    
+    if (document.getElementById('paisExped').value.length == "" ){
+         todo_correcto = todo_correcto + "Pais Expedición\n";
+    }    
+    
+    if (document.getElementById('deptoExped').value.length == "" ){
+         todo_correcto = todo_correcto + "Dpto. Expedición\n";
+    }   
+    
+      if (document.getElementById('ciudadExped').value.length == "" ){
+         todo_correcto = todo_correcto + "Ciudad Expedición\n";
+    }   
+    
+    if (document.getElementById('fechaNacClie').value.length == "" ){
+         todo_correcto = todo_correcto + "Fecha Nacimiento\n";
+    }   
+    
+    if (document.getElementById('genero').value.length == "" ){
+         todo_correcto = todo_correcto + "Género\n";
+    }   
+    
+    if (document.getElementById('paisNaci').value.length == "" ){
+         todo_correcto = todo_correcto + "Pais Nacimiento\n";
+    }   
+    
+    if (document.getElementById('deptoNaci').value.length == "" ){
+         todo_correcto = todo_correcto + "Dpto. Nacimiento\n";
+    }   
+    
+    if (document.getElementById('ciudadNaci').value.length == "" ){
+         todo_correcto = todo_correcto + "Ciudad Nacimiento\n";
+    }   
+    
+    if (document.getElementById('nacionalidad').value.length == "" ){
+         todo_correcto = todo_correcto + "Nacionalidad\n";
+    }   
+    
+    if (document.getElementById('sinoNaciona').value.length == "" ){
+         todo_correcto = todo_correcto + "Tiene otras Nacionalidades\n";
+    }   
+    
+    if (document.getElementById('observNaciona').value.length == "" && document.getElementById('sinoNaciona').value == "S"){
+         todo_correcto = todo_correcto + "Especifique otra nacionalidad\n";
+    }   
+    
+    if (document.getElementById('sinoReside').value.length == "" ){
+         todo_correcto = todo_correcto + "Residente otro pais\n";
+    }   
+    
+    if (document.getElementById('observReside').value.length == "" && document.getElementById('sinoReside').value == "S"){
+         todo_correcto = todo_correcto + "Especifique país residencia\n";
+    }   
+    
+     if (document.getElementById('estadoCivil').value == "0" ){
+         todo_correcto = todo_correcto + "Estado Civil\n";
+    }
+    
+    if (document.getElementById('nivelEduca').value.length == "" ){
+         todo_correcto = todo_correcto + "Nivel Educativo\n";
+    }   
+
+    if (document.getElementById('observNivelEdu').value.length == "" && document.getElementById('nivelEduca').value == "Otro"){
+         todo_correcto = todo_correcto + "Cuál nivel educativo\n";
+    }   
+    
+    if (document.getElementById('tipoVivien').value.length == "" ){
+         todo_correcto = todo_correcto + "Tipo Vivienda\n";
+    }   
+
+    if (document.getElementById('observTipoVivind').value.length == "" && document.getElementById('tipoVivien').value == "Otro"){
+         todo_correcto = todo_correcto + "Especifique\n";
+    }   
+    
+    if (document.getElementById('ciudadReside').value.length == "" ){
+         todo_correcto = todo_correcto + "Ciudad Residencia\n";
+    }   
+
+    if (document.getElementById('direccionClie').value.length == "" ){
+         todo_correcto = todo_correcto + "Dirección Residencia\n";
+    }   
+
+    if ( isNaN(document.getElementById('celularClie').value) || document.getElementById('celularClie').value.length == "" ){
+         todo_correcto = todo_correcto + "Celular\n";
+    }   
+
+    if (document.getElementById('emailClie').value.length == "" ){
+         todo_correcto = todo_correcto + "Correo Electrónico\n";
+    }   
+
+
+    return todo_correcto;
+}
 
 function reportePDF(tipoIden, identifica){	
 	window.open('pdfCreacCliente.php?vartipoid='+tipoIden+'&identifica='+identifica);
