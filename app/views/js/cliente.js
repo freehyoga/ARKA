@@ -11,10 +11,7 @@ $( document ).ready(function() {
     $("#fechVincEmpr").datepicker({
        format: 'yyyy/mm/dd',
     });
-   
-    
 
-    
     $('#btnNuevoCliente').hide();
     $('#btnPdfCliente').hide();
     
