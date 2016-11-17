@@ -265,7 +265,7 @@ function validar(){
     }   
 
     if (document.getElementById('emailClie').value.length == "" ){
-         todo_correcto = todo_correcto + "Correo Electrónico\n";
+         todo_correcto = todo_correcto +  " Correo Electrónico\n";
     }   
 
 
