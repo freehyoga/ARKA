@@ -13,7 +13,7 @@
        $selectTipos = $mvc->getTiposIdentificacion();
        
     }
-    
+ //Hooola: TA   
  
 ?>
 <html>
