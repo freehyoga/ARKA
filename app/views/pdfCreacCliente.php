@@ -58,10 +58,9 @@ $pdf->Cell(15, 8, 'Respetado ' . utf8_decode('Señor(a):'), 0);
 $pdf->Ln(10);
 $pdf->SetFont('Arial', '', 11);
 $pdf->MultiCell(0, 5, 'Reciba un cordial saludo por parte de nuestra empresa ARK ACTIVOS SEGUROS SAS, '
-                . 'quien agradece su confianza al solicitar el servicio de intermediacion en la  celebracion' 
-                . ' de una negociacion comercial con la empresa XXXXX; por lo cual queremos informarle que la '
-                . 'operacion que realizo se encuentra a su disposicion para ser consultada en nuestra pagina web '
-                . 'www.arkactivos.com');
+                . 'quien agradece su confianza al solicitar el servicio de Administración de Activos;' 
+                . 'por lo cual queremos informarle que la operación que realizó se encuentra a su '
+                . 'disposición para ser consultada en nuestra página web www.arkactivos.com.');
 
 $pdf->Ln(10);
 $pdf->SetFont('Arial', '', 11);
@@ -71,14 +70,19 @@ $pdf->Ln(10);
 $pdf->SetFont('Arial', '', 11);
 $pdf->Cell(15, 8, '1. Ingrese a www.arkactivos.com',0);
 $pdf->Ln();
-$pdf->Cell(15, 8, '2. Ingrese al boton de acceso a Clientes en el menu principal.', 0);
+$pdf->Cell(15, 8, '2. Ingrese al botón "PORTAL ARK" en el menú principal.', 0);
 $pdf->Ln();
-$pdf->Cell(15, 8, '3. Digite su usuario y clave asignado, esta informacion se enuentra al final de esta carta.', 0);
+$pdf->MultiCell(0, 5, '3. Y donde dice: "Bienvenido, Ingrese sus credenciales" por favor colocar su usuario '
+                       . 'y clave asignado que se enuentra al final de esta carta.');
 $pdf->Ln();
-$pdf->MultiCell(0, 5, '4. Si desea modificar su clave, lo puede realizar desde la aplicacion, en donde encontrara el link CAMBIAR MI CLAVE.');
+$pdf->MultiCell(0, 5, '4. Si desea modificar su clave, lo puede realizar en la parte superior de la página,'
+                        . 'donde encontrará el link CAMBIAR SU CLAVE.');
 $pdf->Ln();
-$pdf->Cell(15, 8, '5. Al ingresar con su usuario y clave aparecerá el titulo CONTRATOS VIGENTES', 0);
-
+$pdf->MultiCell(0, 5, '5. Al ingresar con su usuario y clave aparecerá el titulo CLIENTES, donde se'
+                        . 'encontrará la información personal.');
+$pdf->Ln();
+$pdf->MultiCell(0, 5, '6. En la parte derecha encontrará un menú donde puede consultar las libranzas y '
+                        . 'las novedades de la operación.');
 $pdf->Ln(10);
 $pdf->SetFont('Arial', '', 11);
 $pdf->Cell(15, 8, 'Su usuario y clave asignado son los siguientes:', 0);
