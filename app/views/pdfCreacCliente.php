@@ -49,7 +49,7 @@ $pdf->Cell(100, 5, 'Ciudad', 0);
 
 $pdf->Ln(13);
 $pdf->SetFont('Arial', 'B', 11);
-$pdf->Cell(15, 8, 'REF: Bienvenido a ARK ACTIVOS SEGUROS', 0);
+$pdf->Cell(15, 8, 'REF: Bienvenido a ARK ACTIVOS SEGUROS ', 0);
 
 $pdf->Ln(15);
 $pdf->SetFont('Arial', '', 11);
