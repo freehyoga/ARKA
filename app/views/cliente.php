@@ -13,6 +13,8 @@
        $selectTipos = $mvc->getTiposIdentificacion();
        
     }
+ //Hooola: TA   
+    //comentario Andres
  
 ?>
 <html>
@@ -22,6 +24,8 @@
 </head>
 <body>
 		 <!---start-content---->
+                 <form action="" method="post" onsubmit=""> 
+                 
                  
         	
         <div class="panel panel-default">
@@ -37,13 +41,13 @@
                 <div class="col-md-6" >
                     <div class="form-group">
                         <label class="control-label" for="nombresClie">Nombres:</label>
-                        <input id="nombresClie" name="nombresClie" type="text" placeholder="Juan Esteban" class="form-control input-md" required/>
+                        <input id="nombresClie" name="nombresClie" type="text"class="form-control input-md" required/>
                     </div>
                 </div>
                 <div class="col-md-6" >
                     <div class="form-group">
                         <label class="control-label" for="apellidosClie">Apellidos:</label>  
-                        <input id="apellidosClie"  name="apellidosClie" type="text" placeholder="Galindo" class="form-control input-md">
+                        <input id="apellidosClie" name="apellidosClie" type="text" placeholder="Galindo" class="form-control input-md">
                     </div>
                 </div>
                 <div class="col-md-4" >
@@ -653,5 +657,6 @@
         <input id="btnPdfCliente" target="_blank" name="button" type="button" value="PDF Creacion"  class="btn btn-primary" align="center" >
         <div id="resultadoCreacion"> </div>
 		 <!---End-content---->
+                 </form>             
 </body>
 </html>
