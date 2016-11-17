@@ -13,6 +13,7 @@
        $selectTipos = $mvc->getTiposIdentificacion();
        
     }
+
  //Hooola: TA   
     //comentario Andres
  
