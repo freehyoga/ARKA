@@ -44,7 +44,7 @@
                 <div class="col-md-6" >
                     <div class="form-group">
                         <label class="control-label" for="apellidosClie">Apellidos:</label>  
-                        <input id="apellidosClie" name="apellidosClie" type="text" placeholder="Galindo" class="form-control input-md">
+                        <input id="apellidosClie"  name="apellidosClie" type="text" placeholder="Galindo" class="form-control input-md">
                     </div>
                 </div>
                 <div class="col-md-4" >
