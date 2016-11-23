@@ -13,6 +13,12 @@ $(document).ready(function() {
     oTableMandCliente  = $('#tableMandatoClie').DataTable();
     oTableLibranzaCli  = $('#tableLibranzaCli').DataTable();
     
+    // Boton buscar Cliente
+    $('#btnBuscarCliente').click(function(){      
+        consultarClienteMandato();
+    });
+    
+    
     consultarMandatosCliente();
     
     $('#tableMandatoClie')
@@ -23,7 +29,21 @@ $(document).ready(function() {
     
 });
 
-
+function consultarClienteMandato(){
+    var datosEnvio = new Array;
+    datosEnvio.push({ name: "TipoIden" , value: $("#TipoIden option:selected ").val() });
+    datosEnvio.push({ name: "identifica" , value: $("#identifica").val() });
+    datosEnvio.push({ name: "opcion" , value: 2 });
+    $('#formularioMandato').show();
+    console.log("Entro a consultaCliente Mandato")
+    
+    if ($('#formularioMandato').hide()){
+        $('#formularioMandato').hide();
+    }else{
+        $('#formularioMandato').show();
+    }
+    
+}
 function consultarMandatosCliente(){
     
     oTableMandCliente.clear().draw();
