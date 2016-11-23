@@ -697,8 +697,14 @@ class cliente extends database {
  {
     //conexion a la base de datos
     $this->conectar();
-    $consulta = "SELECT ti.tipoIdentificacion as idTipoIdentificacion, ti.identificacion as TipoIdentificacion, c.identificacion, c.nombres,c.apellidos,c.Fec_Nacimiento_cte  "
-            . "FROM cliente c,tipoidentificacion ti  where c.tipoIdentificacion = ti.tipoIdentificacion ";
+    
+    $consulta = "SELECT ti.tipoIdentificacion as idTipoIdentificacion, ti.identificacion as TipoIdentificacion, c.identificacion, c.nombres,c.apellidos, cc.Num_Celular, cc.Correo_Electronico as email, cc.Direccion_Residencia "
+                    . "FROM cliente c,tipoidentificacion ti, contacto_cliente cc "
+                    . "where c.tipoIdentificacion = ti.tipoIdentificacion and c.identificacion = cc.identificacion ";
+    
+    //***Comentario 20/11/2016****
+    /**$consulta = "SELECT ti.tipoIdentificacion as idTipoIdentificacion, ti.identificacion as TipoIdentificacion, c.identificacion, c.nombres,c.apellidos,c.Fec_Nacimiento_cte  "
+            . "FROM cliente c,tipoidentificacion ti  where c.tipoIdentificacion = ti.tipoIdentificacion ";**/
     /**$consulta = "SELECT ti.tipoIdentificacion as idTipoIdentificacion, ti.identificacion as TipoIdentificacion, c.identificacion, c.nombres,"
               . "c.apellidos, c.telefono, c.correo, c.fechaNacimiento, c.direccion "
               . " FROM cliente c,tipoidentificacion ti "
@@ -768,7 +774,12 @@ class cliente extends database {
             . "'" . $this->estadoCivil . "',"
             . "'" . $this->fechaNacimiento . "',"
             . "'" . $this->genero . "',"
-            . "'" . $this->nivelEduca . "'"
+            . "'" . $this->nivelEduca . "',"
+            . "'" . $this->tipoIdentfcnConyg . "',"
+            . "'" . $this->numIdentfcnConyg . "',"
+            . "'" . $this->nombrsConyg . "',"
+            . "'" . $this->apelldsConyg . "',"
+            . "'" . $this->fijoConyg . "'"
             . ")" ;
     $save = $this->consulta( $query );
     
@@ -782,18 +793,7 @@ class cliente extends database {
             . "'" . $this->email . "'"
             . ")" ;
     $save = $this->consulta( $query_contct );
-    
-    $query_conyg = "INSERT INTO conyuge VALUES "
-            . "( '" . $this->numIdentfcnConyg . "',"
-            . "'" . $this->tipoIdentfcnConyg . "',"
-            . "'" . $this->apelldsConyg . "',"
-            . "'" . $this->nombrsConyg . "',"
-            . "'" . $this->fijoConyg . "',"
-            . "'" . $this->identificacion . "',"
-            . "'" . $this->tipoIdentificacion . "'"
-            . ")" ;
-    $save = $this->consulta( $query_conyg );
-    
+       
     //faltan otros ingresos2
     $query_financ = "INSERT INTO financiera_cliente VALUES "
             . "( '" . $this->identificacion . "',"

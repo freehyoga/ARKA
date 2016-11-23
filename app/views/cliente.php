@@ -13,10 +13,6 @@
        $selectTipos = $mvc->getTiposIdentificacion();
        
     }
-
- //Hooola: TA   
-    //comentario Andres
- 
 ?>
 <html>
 <head>
@@ -24,11 +20,7 @@
   <script src="js/cliente.js" type="text/javascript"></script>
 </head>
 <body>
-		 <!---start-content---->
-                 <form action="" method="post" onsubmit=""> 
-                 
-                 
-        	
+		 <!---start-content---->            	
         <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">INFORMACION BASICA</h3>
@@ -408,7 +400,7 @@
                 <div class="col-md-4" >
                     <div class="form-group">
                         <label class="control-label" for="fechVincEmpr">Vinculado desde:</label>  
-                        <input id="fechVincEmpr" name="fechVincEmpr" type="Date" class="form-control input-md" required="">
+                        <input id="fechVincEmpr" name="fechVincEmpr" type="text" class="form-control input-md" required="">
                     </div>
                 </div>
                 <div class="col-md-3" >
@@ -657,7 +649,6 @@
         <input id="btnNuevoCliente" name="button" type="button" value="Nuevo cliente"  class="btn btn-primary" align="center" >
         <input id="btnPdfCliente" target="_blank" name="button" type="button" value="PDF Creacion"  class="btn btn-primary" align="center" >
         <div id="resultadoCreacion"> </div>
-		 <!---End-content---->
-                 </form>             
+		 <!---End-content---->           
 </body>
 </html>

@@ -10,7 +10,7 @@ class login extends database {
  {
   //conexion a la base de datos
   $this->conectar();
-  //$pass_encript = md5($password);
+  $pass_encript = md5($password);
   $pass_encript = $password;
   $query = $this->consulta("SELECT * FROM usuario WHERE identificacion='$usuario' and password='$pass_encript';");
       $this->disconnect();

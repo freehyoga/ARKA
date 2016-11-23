@@ -22,10 +22,9 @@
                                         $fila['identificacion'],
                                         $fila['nombres'], 
                                         $fila['apellidos'],
-                                        $fila['telefono'], 
-                                        $fila['correo'],
-                                        //$fila['fechaNacimiento'], 
-                                        $fila['direccion'],
+                                        $fila['Num_Celular'],
+                                        $fila['email'],
+                                        $fila['Direccion_Residencia'],
                                         '<div align="center"><img onclick="verMandatos(\''.$fila['idTipoIdentificacion'].'\',\''.$fila['identificacion'].'\')" src="imagenes/mandatos.ico" alt="Mandatos" style="width:30px;height:30px;"></div>'
                                         
                                       );

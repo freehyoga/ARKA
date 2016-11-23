@@ -133,10 +133,12 @@ $( document ).ready(function() {
             success: function(s){
                 console.log(s.length);
                 
-                if( s == '' ){
+                if( s === '' ){
                    $("#resultadoCreacion").html("<p>Cliente creado exitosamente</p>"); 
+                   $('#btnNuevoCliente').show();
+                   $('#btnPdfCliente').show();
                 }
-                if( s != '' ){
+                if( s !== '' ){
                    $("#resultadoCreacion").html("<p>El cliente ya existe</p>"); 
                 }
                 $('#btnNuevoCliente').show();
@@ -158,8 +160,8 @@ $( document ).ready(function() {
 
 function validar(){
     var todo_correcto ;
-    todo_correcto = true;
-    if(document.getElementById('nombresClie').value.length == "" ){
+    todo_correcto = "";
+    /**if(document.getElementById('nombresClie').value.length == "" ){
          todo_correcto = "Nombres Cliente\n";
     }
     if (document.getElementById('apellidosClie').value.length == "" ){
@@ -263,9 +265,7 @@ function validar(){
 
     if (document.getElementById('emailClie').value.length == "" ){
          todo_correcto = todo_correcto + "Correo Electrónico\n";
-    }   
-
-
+    }*/
     return todo_correcto;
 }
 

@@ -40,12 +40,15 @@ function consultarClientes(){
             type: 'POST',
             data: datosEnvio, 
             success: function(s){
+                console.log("Pailas");
                 //oTable.fnClearTable();
                 oTable.clear().draw();
-                if( s != ''){
+                console.log("Pailas");
+                //console.log(s);
+                if( s !== ''){
                     //console.log(s);
                     //console.log(s.length);
-                    
+                    console.log("Pailas");
                     if( s.length >= 1 ){
                         oTable.rows.add( s ).draw();     
                         /*
@@ -65,10 +68,12 @@ function consultarClientes(){
                         } // End For	
                         oTable.draw();
                         */
+                       console.log("Entro");
                     }
                 }
             }, error: function(e){ 
                 console.log(e.responseText);	
+                //console.log("errors");	
             } 
         }); 
         $('#resultadoClientes').show();
