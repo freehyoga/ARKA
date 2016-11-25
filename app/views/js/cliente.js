@@ -130,9 +130,7 @@ $( document ).ready(function() {
             dataType: 'json',
             type: 'POST',
             data: datosEnvio, 
-            success: function(s){
-                console.log(s.length);
-                
+            success: function(s){                
                 if( s === '' ){
                    $("#resultadoCreacion").html("<p>Cliente creado exitosamente</p>"); 
                    $('#btnNuevoCliente').show();

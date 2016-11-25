@@ -17,14 +17,18 @@
             $select = $mvc->getMandatos( $tipoIdent,  $tipoIdentifica );
 
             if( $select != ''){
-                foreach( $select as $fila ){
+                /**foreach( $select as $fila ){
                     $output[] = array (       
                         '<div align="center"><a href="javascript:verLibranzas(\''. $fila['id_mandato'] .'\');">'. $fila['id_mandato'] .'</a><img onclick="javascript:verLibranzas(\''. $fila['id_mandato'] .'\');" src="imagenes/search.ico" alt="ver libranzas" style="width:30px;height:30px;"></div>',
                         $fila['nombre'], 
                         $fila['vlr_mandato'],
                         $fila['fecha_creacion']
-                    );
-                }
+                    );**/
+                    foreach( $select as $fila ){
+                        $output[] = array ( 
+                                $fila['id_mandato']
+                            );
+                    }
             }else{
                 $output[] = '';
                 //header("location:../../index.php");
@@ -63,23 +67,48 @@
         // OPCION PARA CREAR MANDATO 
          if( $opcion == 3 ){
             try{                
-                $tipoIdent    = $_POST['tipoIdentifica'];
-                $ident        = $_POST['identifica'];
-                $valorMandato = $_POST['vlrMandato'];
+                             
                 
                 $mvc = new mvc_controller();
+                $tipoIdent    = "";
+                $ident        = ""; 
+                //Traer el ultimo numero de mandato
+                $select1 = $mvc->getMandatos( $tipoIdent,  $ident);
                 
-                $resultado = str_replace(".", "", $valorMandato);
+            if( $select1 == '' || $select1 == null ){
+                $output[] = array ( "No existen Mandatos." );
+            }
+            else{
+                foreach( $select1 as $fila ){
+                        $id_mandato   = $fila['id_mandato'];       
+                }
+                $tipoIdent    = $_POST['tipoIdentifica'];
+                $ident        = $_POST['identifica'];  
+                $TipoMandt    = $_POST['TipoMandt'];
+                $porcDescAdmi = $_POST['porcDescAdmi'];
+                $porcDescAdmi = str_replace(".", "", $porcDescAdmi);
+                $valrCons     = $_POST['valrCons'];
+                $valrCons     = str_replace(".", "", $valrCons);
+                $porcDescCorre= $_POST['porcDescCorre'];
+                $porcDescCorre= str_replace(".", "", $porcDescCorre);
                 
-                // Verificar si el cliente ya existe en la base de datos
-                $select1 = $mvc->InsertarMandato( 
-                                        $resultado, 
-                                        $tipoIdent, 
-                                        $ident );
+                $select1 = $mvc->InsertarMandato(
+                                        $id_mandato,
+                                        $TipoMandt,
+                                        $tipoIdent,
+                                        $ident,
+                                        $porcDescAdmi, 
+                                        $valrCons, 
+                                        $porcDescCorre );
 
-                $output[] = [$select1,$valorMandato];
+                $output[] = array(
+                            $fila ['id_mandato'],
+                            $fila ['ident']);
 
                 echo json_encode($output);
+                
+            }
+                
             }catch(Exception $ex){
                 $output[] = array ( $ex->getMessage() ,"error");
                 echo json_encode($output );
@@ -195,6 +224,41 @@
                 $output[] = array ( $ex->getMessage() ,"error");
                 echo json_encode($output );
             }  
+        }
+        //Consultar si el cliente existe para crear el mandato
+        if($opcion ==8){
+            
+            try {
+                   
+                $tipoIdent = $_POST['tipoIdentifica'];
+                $ident     = $_POST['identifica'];
+                $nombre    = "";
+                
+                $mvc = new mvc_controller();
+
+                // Verificar si el cliente ya existe en la base de datos
+                $select1 = $mvc->getClientes( $tipoIdent,  $ident , $nombre);
+                
+                
+                if( $select1 != ''){  
+                     
+                    foreach( $select1 as $fila ){
+                        $output[] = array (  
+                                            $fila['identificacion'], 
+                                            $fila['TipoIdentificacion']
+                                    );    
+                    }
+                }else{
+                    $output[] = array(
+                        $fila[01],
+                        $fila['mal'],
+                    );
+                }
+                echo json_encode($output);
+            } catch (Exception $ex) {
+                $output[] = null;// array ( $ex->getMessage() ,"error");
+                echo json_encode($output );
+            }
         }
         
     }

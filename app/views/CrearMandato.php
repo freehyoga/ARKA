@@ -37,18 +37,32 @@
                     </div>  
                     <div class="col-md-4" >
                         <div class="form-group">
-                            <label class="control-label" for="TipoIden">Tipo de Identificación:</label>   
-                            <input id="TipoIden" name="TipoIden" type="text" placeholder="1022365987" class="form-control input-md">
+                            <label class="control-label" for="tipoIdentifica">Tipo de Identificación:</label>  
+                            <select id="tipoIdentifica" name="tipoIdentifica" class="form-control">
+                            <?php  
+                                if( $select != ''){
+                                    echo '<option value="0">Seleccione...</option>';
+                                    foreach( $selectTipos as $fila ){
+                                        echo '<option value=\''. $fila['TipoIdentificacion'] .'\'> ' . $fila['Identificacion'] . '</option>';
+                                    }
+                                }else{
+                                    echo '<option value="">Seleccione...</option>';
+                                }
+                            ?>
+                            </select>
                         </div>                    
                     </div> 
                     <div class="col-md-4" >
                         <div class="form-group">
+                            <br />
                             <input id="btnBuscarCliente" name="button" type="button" value="Buscar Cliente" class="btn btn-primary">
                         </div>                    
                     </div> 
                 </div>
             </div>
-                  
+            
+            
+            
             <!-- Form Name -->
                 <!-- Text input-->
                 <div class="form-group" id="formularioMandato" style="display:none">
@@ -66,20 +80,20 @@
                 </div>
                 <div class="col-md-3" >
                     <div class="form-group">
-                        <label class="control-label" for="paisNaci">Porcentaje descuento Admin (%):</label>   
-                        <input id="paisNaci" name="paisNaci" type="text" class="form-control input-md" required="">
+                        <label class="control-label" for="porcDescAdmi">Porcentaje descuento Admin (%):</label>   
+                        <input id="porcDescAdmi" name="porcDescAdmi" type="text" class="form-control input-md" required="">
                     </div>
                 </div>
                 <div class="col-md-3" >
                     <div class="form-group">
-                        <label class="control-label" for="deptoNaci">Valor consignación:</label>   
-                        <input id="deptoNaci" name="deptoNaci" type="text" class="form-control input-md" required="">
+                        <label class="control-label" for="valrCons">Valor consignación:</label>   
+                        <input id="valrCons" name="valrCons" type="text" class="form-control input-md" required="">
                     </div>
                 </div>
                 <div class="col-md-3" >
                     <div class="form-group">
-                        <label class="control-label" for="paisNaci">Porcentaje descuento Corredor(%):</label>   
-                        <input id="paisNaci" name="paisNaci" type="text" class="form-control input-md" required="">
+                        <label class="control-label" for="porcDescCorre">Porcentaje descuento Corredor(%):</label>   
+                        <input id="porcDescCorre" name="porcDescCorre" type="text" class="form-control input-md" required="">
                     </div>
                 </div>
                 
@@ -88,7 +102,12 @@
             </div>
         </div>     
 	</div>
-        
+        <div class="alert alert-danger" id="MsjAlertBuscar" style="display:none">
+                <strong>Importante! </strong> Por favor ingresar los datos de un cliente existente.
+        </div>
+        <div class="alert alert-success" id="MsjMandBien" style="display:none">
+            <strong>Creación Exitosa!</strong> El mandato se inserto de manera correcta.
+        </div>
         <div id="resultadoCreacion"> </div>
 		 <!---End-content---->           
 </body>

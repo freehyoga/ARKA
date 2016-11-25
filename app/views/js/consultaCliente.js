@@ -170,8 +170,9 @@ function consultarMandato( id_mandato ){
             data: datosEnvio, 
             success: function(s){             
                 if( s != ''){
-                    console.log(s);
-                    
+                    console.log(s[0][0]);
+                    console.log(s[0][1]);
+                    console.log(s[1][0]);
                     // SI ESTADO ES ASIGNADO SE OCULTA CAMPOS DE ASOCIAR LIBRANZAS
                     
                     if( s[0][1] == 1 ){

@@ -298,14 +298,17 @@ function InsertarLscLibranza($idLibranza, $TipoIdenProv, $IdenProv, $NomDeuLib, 
 }
 
 
-function InsertarMandato($valorMandato, $tipoIdent, $Identifica )
+function InsertarMandato($id_mandato, $tipoMandato, $tipoIdent,$Identifica,$porcDescAdmin,$valoConsig,$porcDescCorre )
 {
     $mandato = new mandato();  
-    
+    $mandato->setId_Mandato($id_mandato + 1);
+    $mandato->setTipoMandato($tipoMandato);
     $mandato->setTipoIdentificacion( $tipoIdent );
-    $mandato->setVlrMandato( $valorMandato );
     $mandato->setIdentificacion( $Identifica );
-    $mandato->setEstaMandato( '1' );
+    $mandato->setPorcDescAdmin($porcDescAdmin);
+    $mandato->setValoConsig($valoConsig);
+    $mandato->setPorcDescCorre($porcDescCorre);
+    
     
     return $mandato->insertarMandato();
                       

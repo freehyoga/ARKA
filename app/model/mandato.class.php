@@ -7,13 +7,47 @@ require_once "db.class.php";
 class mandato extends database {
 
     private $id_mandato;
+    private $tipoMandato;
     private $tipoIdentificacion;
     private $identificacion;
-    private $estaMandato;
-    private $vlrMandato;
+    private $porcDescAdmin;
     private $fechaCreacion;
+    private $valoConsig;
+    private $porcDescCorre;
     
-    public function getFechaCreacion() {
+    function getTipoMandato() {
+        return $this->tipoMandato;
+    }
+
+    function getPorcDescAdmin() {
+        return $this->porcDescAdmin;
+    }
+
+    function getValoConsig() {
+        return $this->valoConsig;
+    }
+
+    function getPorcDescCorre() {
+        return $this->porcDescCorre;
+    }
+
+    function setTipoMandato($tipoMandato) {
+        $this->tipoMandato = $tipoMandato;
+    }
+
+    function setPorcDescAdmin($porcDescAdmin) {
+        $this->porcDescAdmin = $porcDescAdmin;
+    }
+
+    function setValoConsig($valoConsig) {
+        $this->valoConsig = $valoConsig;
+    }
+
+    function setPorcDescCorre($porcDescCorre) {
+        $this->porcDescCorre = $porcDescCorre;
+    }
+
+        public function getFechaCreacion() {
         return $this->fechaCreacion;
     }
  
@@ -64,12 +98,15 @@ class mandato extends database {
     function insertarMandato(){
         $this->conectar();
         $query = "INSERT INTO mandato VALUES "
-                . "( null,"
+                . "(" . $this->id_mandato . ","
+                . "'" . $this->tipoMandato . "',"
                 . "'" . $this->identificacion . "',"
                 . "'" . $this->tipoIdentificacion . "',"
-                . "'" . $this->estaMandato . "',"
-                . "'" . $this->vlrMandato . "',"
-                . "NOW())" ;
+                . "'" . $this->porcDescAdmin . "',"
+                . "NOW(),"
+                . "'" . $this->valoConsig . "',"
+                . "'" . $this->porcDescCorre . "'"
+                . ")" ;
         $save = $this->insercion( $query );
         
         $this->disconnect();
@@ -80,7 +117,7 @@ class mandato extends database {
     {
        //conexion a la base de datos
        $this->conectar();
-       $consulta = "SELECT m.id_mandato,em.nombre, format(vlr_mandato,2) as vlr_mandato , m.fecha_creacion  FROM mandato m, estado_mandato em where em.esta_mandato= m.esta_mandato ";
+       $consulta = "SELECT m.id_mandato  FROM mandato m WHERE m.id_mandato = (select max(id_mandato) from mandato)";
 
        if( $tipoIden != null && $tipoIden != '' && $tipoIden != '0' ){
            $consulta .= " AND tipoIdentificacion = '" . $tipoIden ."'";
@@ -88,7 +125,6 @@ class mandato extends database {
        if( $Ident != null && $Ident != '' ){
            $consulta .= " AND identificacion = '" . $Ident ."'" ;
        }
-
        $query = $this->consulta( $consulta . ";");
            $this->disconnect();
        if($this->numero_de_filas($query) > 0) // existe -> datos correctos
